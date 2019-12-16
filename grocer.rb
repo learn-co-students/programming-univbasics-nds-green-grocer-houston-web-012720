@@ -58,15 +58,11 @@ while index < coupons.count do
   coupon = coupons[index]
   
   # see if the item exist already in the cart
-  
   cart_item = find_item_by_name_in_collection(coupon[:item], cart) 
 
-  item_coupon = coupon[:item]
+   item_coupon = coupon[:item]
   
-    #see if the item with coupon already exist in the cart
-    
-       
-       
+    #see if the item with coupon already exist in the car
     coupon_item = "#{coupon[:item]} W/COUPON"
   
     coupon_with_item = find_item_by_name_in_collection(coupon_item, cart)
@@ -74,14 +70,12 @@ while index < coupons.count do
    
     
    # see if there's an item and see if the item has the require amount to apply the coupon
-   
     if cart_item && cart_item[:count] >= coupon[:num]
   
     
       # see if the item with coupon exist and increases the # of items on the applied coupon
       #once coupon is applied subtract the original cart of the # item the coupon has been applied to
-  
-      if coupon_with_item
+    if coupon_with_item
         coupon_with_item[:count] += coupon[:num]
         cart_item[:count] -= coupon[:num]
      
